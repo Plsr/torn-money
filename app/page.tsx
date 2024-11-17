@@ -58,7 +58,7 @@ export default async function Home() {
         <CrimesPerformedWidget crimes={crimes} />
         <FailureRateWidget crimes={crimes} />
       </div>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-2 my-6">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 my-6">
         <Card>
           <CardHeader>
             <CardTitle>Money Gained</CardTitle>
