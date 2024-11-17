@@ -1,5 +1,6 @@
 "use server";
 
+import { redirect } from "next/navigation";
 import { setApiKey } from "../util/cookies";
 
 export const addApiKey = async (formData: FormData) => {
@@ -9,4 +10,5 @@ export const addApiKey = async (formData: FormData) => {
   }
 
   await setApiKey(apiKey as string);
+  redirect("/");
 };
