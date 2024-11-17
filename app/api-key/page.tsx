@@ -19,6 +19,7 @@ export default async function ApiKey() {
   if (apiKey) {
     redirect("/");
   }
+
   return (
     <div className="flex justify-center items-center h-screen">
       <Card className="w-full max-w-md">
