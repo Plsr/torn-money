@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { getApiKey } from "./util/cookies";
 import { getCrimes, getFactionInfo } from "./actions";
-import { format, getWeek, startOfWeek } from "date-fns";
+import { format, getWeek } from "date-fns";
 
 import { MoneyGainedChart } from "./components/MoneyGainedChart";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
