@@ -17,6 +17,8 @@ import {
 import { LastWeekRevenueWidget } from "../components/LastWeekRevenueWidget";
 import { CrimesPerformedWidget } from "../components/CrimesPerformedWidget";
 import { FailureRateWidget } from "../components/FailureRateWidget";
+import { FactionFunds } from "@/components/FactionFunds";
+import { FactionMoneyDistribution } from "@/components/FactionMoneyDistribution";
 
 export default async function Home() {
   const apiKey = await getApiKey();
@@ -28,7 +30,6 @@ export default async function Home() {
   const crimes = await getCrimes();
   const factionInfo = await getFactionInfo();
 
-  console.log(factionInfo);
   if (!crimes) return null;
 
   const crimesByWeek = crimes
@@ -49,14 +50,13 @@ export default async function Home() {
     }, {});
 
   return (
-    <div>
+    <div className="max-w-screen-xl mx-auto">
       <h1 className="text-3xl font-bold tracking-tight mt-6">
         Crime Stats for {factionInfo.name}
       </h1>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 my-6">
-        <LastWeekRevenueWidget crimesByWeek={crimesByWeek} />
-        <CrimesPerformedWidget crimes={crimes} />
-        <FailureRateWidget crimes={crimes} />
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 my-6">
+        <FactionFunds />
+        <FactionMoneyDistribution />
       </div>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 my-6">
         <Card>
@@ -110,6 +110,11 @@ export default async function Home() {
             </Table>
           </CardContent>
         </Card>
+      </div>
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 my-6">
+        <LastWeekRevenueWidget crimesByWeek={crimesByWeek} />
+        <CrimesPerformedWidget crimes={crimes} />
+        <FailureRateWidget crimes={crimes} />
       </div>
     </div>
   );

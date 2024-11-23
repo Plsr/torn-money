@@ -33,3 +33,17 @@ export type Crime = {
   money_gain: number;
   respect_gain: number;
 };
+
+export type FactionVault = {
+  money: number;
+  points: number;
+  faction_id: number;
+};
+
+export type FactionDonations = {
+  [key: string]: {
+    name: string;
+    money_balance: number;
+    points_balance: number;
+  };
+};

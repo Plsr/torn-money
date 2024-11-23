@@ -31,7 +31,7 @@ export default async function ApiKey() {
               <a
                 className="text-blue-600 underline"
                 target="_blank"
-                href="https://www.torn.com/preferences.php#tab=api?step=addNewKey&title=torn&faction=basic,members,armor,armorynews,crimenews,crimes,positions,stats,weapons,fundsnews"
+                href="https://www.torn.com/preferences.php#tab=api?step=addNewKey&title=torn&faction=basic,members,armor,armorynews,crimenews,crimes,positions,stats,weapons,contributors,currency,donations,fundsnews"
               >
                 Generate API Key
               </a>

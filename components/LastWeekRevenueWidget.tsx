@@ -12,7 +12,7 @@ export const LastWeekRevenueWidget = ({
 
   // Calculate the percentage increase
   const percentageIncrease = ((lastWeek - referenceWeek) / referenceWeek) * 100;
-  console.log(percentageIncrease);
+
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

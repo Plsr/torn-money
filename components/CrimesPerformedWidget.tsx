@@ -21,7 +21,6 @@ export const CrimesPerformedWidget = ({ crimes }: { crimes: Crime[] }) => {
     ((lastWeekCrimeNumber - referenceWeekCrimeNumber) /
       referenceWeekCrimeNumber) *
     100;
-  console.log(percentageIncrease);
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -49,7 +48,7 @@ export const CrimesPerformedWidget = ({ crimes }: { crimes: Crime[] }) => {
           )}
         >
           {percentageIncrease > 0 ? "+" : "-"}
-          {percentageIncrease.toFixed(2)}% from last week
+          {percentageIncrease.toFixed(2)}% from previous week
         </p>
       </CardContent>
     </Card>

@@ -1,6 +1,11 @@
 "use server";
 
-import { fetchFactionInfo, getFactionCrimes } from "../data/api";
+import {
+  fetchFactionDonations,
+  fetchFactionInfo,
+  fetchFactionVault,
+  getFactionCrimes,
+} from "../data/api";
 import { getApiKey } from "../util/cookies";
 
 export const getFactionInfo = async () => {
@@ -20,8 +25,34 @@ export const getCrimes = async () => {
 
   try {
     const crimes = await getFactionCrimes(apiKey);
-    console.log(crimes);
     return crimes;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getFactionVault = async () => {
+  const apiKey = await getApiKey();
+  if (!apiKey) {
+    throw new Error("API key is required");
+  }
+  try {
+    const factionVault = await fetchFactionVault(apiKey);
+    return factionVault;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getFactionDonations = async () => {
+  const apiKey = await getApiKey();
+  if (!apiKey) {
+    throw new Error("API key is required");
+  }
+
+  try {
+    const factionDonations = await fetchFactionDonations(apiKey);
+    return factionDonations;
   } catch (error) {
     console.error(error);
   }

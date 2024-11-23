@@ -1,4 +1,9 @@
-import { ApiCrime, Crime } from "../types/crime";
+import {
+  ApiCrime,
+  Crime,
+  FactionDonations,
+  FactionVault,
+} from "../types/crime";
 
 type ApiCrimeResponse = {
   crimes: {
@@ -33,6 +38,36 @@ export const fetchFactionInfo = async (apiKey: string) => {
     );
     const data = await response.json();
     return data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+export const fetchFactionVault = async (apiKey: string) => {
+  try {
+    const response = await fetch(
+      `https://api.torn.com/faction/?selections=currency&key=${apiKey}`
+    );
+    const data = (await response.json()) as FactionVault;
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+type ApiFactionDonations = {
+  donations: FactionDonations;
+};
+
+export const fetchFactionDonations = async (apiKey: string) => {
+  try {
+    const response = await fetch(
+      `https://api.torn.com/faction/?selections=donations&key=${apiKey}`
+    );
+    const data = (await response.json()) as ApiFactionDonations;
+    return data.donations;
   } catch (error) {
     console.error(error);
     throw error;
