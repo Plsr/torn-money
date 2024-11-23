@@ -1,9 +1,9 @@
 import { redirect } from "next/navigation";
-import { getApiKey } from "./util/cookies";
+import { getApiKey } from "../util/cookies";
 import { getCrimes, getFactionInfo } from "./actions";
 import { format, getWeek } from "date-fns";
 
-import { MoneyGainedChart } from "./components/MoneyGainedChart";
+import { MoneyGainedChart } from "../components/MoneyGainedChart";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Table,
@@ -14,9 +14,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { LastWeekRevenueWidget } from "./components/LastWeekRevenueWidget";
-import { CrimesPerformedWidget } from "./components/CrimesPerformedWidget";
-import { FailureRateWidget } from "./components/FailureRateWidget";
+import { LastWeekRevenueWidget } from "../components/LastWeekRevenueWidget";
+import { CrimesPerformedWidget } from "../components/CrimesPerformedWidget";
+import { FailureRateWidget } from "../components/FailureRateWidget";
 
 export default async function Home() {
   const apiKey = await getApiKey();

@@ -1,7 +1,7 @@
 "use server";
 
-import { fetchFactionInfo, getFactionCrimes } from "./data/api";
-import { getApiKey } from "./util/cookies";
+import { fetchFactionInfo, getFactionCrimes } from "../data/api";
+import { getApiKey } from "../util/cookies";
 
 export const getFactionInfo = async () => {
   const apiKey = await getApiKey();
