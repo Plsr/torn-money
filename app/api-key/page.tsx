@@ -26,7 +26,16 @@ export default async function ApiKey() {
         <form action={addApiKey}>
           <CardHeader>
             <CardTitle>Add API key</CardTitle>
-            <CardDescription>Card Description</CardDescription>
+            <CardDescription>
+              <p>If you have no API Key yet, please to so here:</p>
+              <a
+                className="text-blue-600 underline"
+                target="_blank"
+                href="https://www.torn.com/preferences.php#tab=api?step=addNewKey&title=torn&faction=basic,members,armor,armorynews,crimenews,crimes,positions,stats,weapons,fundsnews"
+              >
+                Generate API Key
+              </a>
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <Label htmlFor="apiKey">API Key</Label>

@@ -48,7 +48,7 @@ export const LastWeekRevenueWidget = ({
           )}
         >
           {percentageIncrease > 0 ? "+" : "-"}
-          {percentageIncrease.toFixed(2)}% from last week
+          {percentageIncrease.toFixed(2)}% from previous week
         </p>
       </CardContent>
     </Card>
