@@ -5,8 +5,8 @@ import {
   fetchFactionInfo,
   fetchFactionVault,
   getFactionCrimes,
-} from "../data/api";
-import { getApiKey } from "../util/cookies";
+} from "@/data/api";
+import { getApiKey } from "@/util/cookies";
 
 export const getFactionInfo = async () => {
   const apiKey = await getApiKey();

@@ -10,5 +10,5 @@ export const addApiKey = async (formData: FormData) => {
   }
 
   await setApiKey(apiKey as string);
-  redirect("/");
+  redirect("/crime-stats");
 };

@@ -1,4 +1,7 @@
-import { getFactionDonations, getFactionVault } from "@/app/actions";
+import {
+  getFactionDonations,
+  getFactionVault,
+} from "@/app/(authenticated)/crime-stats/actions";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const FactionFunds = async () => {
