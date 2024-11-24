@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { getApiKey } from "../util/cookies";
-import { getCrimes, getFactionInfo } from "./actions";
+import { getCrimes } from "./actions";
 import { format, getWeek } from "date-fns";
 
 import { MoneyGainedChart } from "../components/MoneyGainedChart";
