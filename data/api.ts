@@ -1,3 +1,4 @@
+import { FactionInfo } from "@/types/factionInfo";
 import {
   ApiCrime,
   Crime,
@@ -37,7 +38,7 @@ export const fetchFactionInfo = async (apiKey: string) => {
       `https://api.torn.com/faction/?selections=basic&key=${apiKey}`
     );
     const data = await response.json();
-    return data;
+    return data as FactionInfo;
   } catch (error) {
     console.error(error);
     throw error;

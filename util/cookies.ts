@@ -11,7 +11,8 @@ export const setApiKey = async (apiKey: string) => {
   const cookieStore = await cookies();
   cookieStore.set(API_KEY_COOKIE, apiKey, {
     httpOnly: true,
-    secure: true,
+    // Safari doesn't like secure cookies on localhost
+    secure: process.env.NODE_ENV === "production" ? true : false,
     expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30),
     sameSite: "strict",
   });

@@ -28,7 +28,6 @@ export default async function Home() {
   }
 
   const crimes = await getCrimes();
-  const factionInfo = await getFactionInfo();
 
   if (!crimes) return null;
 
@@ -51,9 +50,7 @@ export default async function Home() {
 
   return (
     <div className="max-w-screen-xl mx-auto">
-      <h1 className="text-3xl font-bold tracking-tight mt-6">
-        Crime Stats for {factionInfo.name}
-      </h1>
+      <h1 className="text-3xl font-bold tracking-tight mt-6">Crime Stats</h1>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 my-6">
         <FactionFunds />
         <FactionMoneyDistribution />

@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { AppSidebar } from "@/components/AppSidebar";
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
+
+import { getFactionInfo } from "./actions";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -23,12 +31,26 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const factionInfo = await getFactionInfo();
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased px-4`}
       >
-        {children}
+        <SidebarProvider>
+          <AppSidebar
+            factionName={factionInfo.name}
+            tagImage={factionInfo.tag_image}
+            rankName={factionInfo.rank.name}
+          />
+          <SidebarInset>
+            <header className="px-4 py-2">
+              <SidebarTrigger className="-ml-1" />
+            </header>
+            {children}
+          </SidebarInset>
+        </SidebarProvider>
       </body>
     </html>
   );

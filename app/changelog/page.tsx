@@ -26,6 +26,15 @@ export type Change = {
 
 const changelogData: ChangelogEntry[] = [
   {
+    date: "2024-11-24",
+    changes: [
+      {
+        type: "added",
+        description: "Basic sidebar",
+      },
+    ],
+  },
+  {
     date: "2024-11-23",
     changes: [
       {
